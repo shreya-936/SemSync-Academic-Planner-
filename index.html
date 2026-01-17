@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Engineering Student Academic Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e85e30",
+                        "background-light": "#f9f7f2",
+                        "background-dark": "#211511",
+                        "olive-muted": "#6b705c",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181311] dark:text-white antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-[#e5dedc] dark:border-white/10 bg-white dark:bg-background-dark flex flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex gap-3 items-center">
+<div class="bg-primary/10 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#181311] dark:text-white text-base font-bold leading-none">Engineering</h1>
+<p class="text-olive-muted text-xs font-normal">Batch 3 • Semester 5</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">dashboard</span>
+<p class="text-sm font-semibold">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-olive-muted hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<p class="text-sm font-medium">Curriculum</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-olive-muted hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">experiment</span>
+<p class="text-sm font-medium">Lab Manuals</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-olive-muted hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">school</span>
+<p class="text-sm font-medium">Grades</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-olive-muted hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">schedule</span>
+<p class="text-sm font-medium">Full Timetable</p>
+</a>
+</nav>
+</div>
+<div class="pt-4 border-t border-[#e5dedc] dark:border-white/10">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Close up profile picture of a student" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCu3AKMj4mbYmdq-9tE_T9dc8Es4fXsFtbC9rvRg2TOLr7BWVnGJUG1gfI2CVmB9gp26tGr4dCp1akNbgFtmLX84wJaFDvGc6O2nmqv3pSlMFee05DTqw22q29dxCfqz16Kb_HEU_6GhmcPAE8r0Ln6u9I5h24Ei1Hrx3g3xhXDFQeVT1xY7kuNlM51S5ZWlhFvHFScxcmFddmkuZ0htNbwjBv4eyIXB0kOL3fqf6_i2Kd9khI-tRv7fp1rJJySYbW0OhRTrBmcWjaB");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold dark:text-white">Alex Rivera</p>
+<p class="text-[10px] text-olive-muted uppercase tracking-wider font-bold">Student ID: 44210</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<!-- Top Navbar -->
+<header class="flex items-center justify-between border-b border-[#e5dedc] dark:border-white/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10 px-8 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="text-olive-muted text-sm font-medium">Semester 5</span>
+<span class="text-olive-muted/30 text-sm">/</span>
+<span class="text-[#181311] dark:text-white text-sm font-bold">Batch 3 Daily Planner</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative min-w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-olive-muted text-xl">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg border-none bg-background-light dark:bg-white/5 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search resources, topics, labs..."/>
+</div>
+<button class="size-10 flex items-center justify-center rounded-lg bg-background-light dark:bg-white/5 text-olive-muted relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full"></span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-background-light dark:bg-white/5 text-olive-muted">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-[1200px] mx-auto">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#181311] dark:text-white text-4xl font-black leading-tight tracking-tight">Today's Overview</h2>
+<p class="text-olive-muted text-base font-normal">Tuesday, October 24th • Batch 3 Schedule</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-sm font-bold">warning</span>
+<span class="text-sm font-bold uppercase tracking-wide">Lab-Heavy Day</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left: Schedule Timeline -->
+<div class="col-span-8 flex flex-col gap-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-[#181311] dark:text-white text-xl font-bold">Lecture &amp; Lab Timeline</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-base">print</span>
+                                Print Schedule
+                            </button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Lab Block (3 Hours) -->
+<div class="relative pl-16 group">
+<div class="absolute left-0 top-0 h-full flex flex-col items-center">
+<span class="text-xs font-bold text-olive-muted mb-1">09:00</span>
+<div class="w-[2px] grow bg-primary/30 rounded-full"></div>
+<span class="text-xs font-bold text-olive-muted mt-1">12:00</span>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl border-l-4 border-primary p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #e85e30 1px, transparent 0); background-size: 10px 10px;"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] uppercase font-bold text-primary tracking-widest bg-primary/10 px-2 py-0.5 rounded">Major Lab Block</span>
+<h4 class="text-[#181311] dark:text-white text-xl font-bold mt-2">DAA Lab: Design &amp; Analysis of Algorithms</h4>
+<p class="text-olive-muted text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base">location_on</span>
+                                                System Lab 4 • Ground Floor
+                                            </p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-olive-muted uppercase">Batch 3</p>
+<p class="text-xs text-olive-muted">Section A</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" data-alt="Instructor avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1WmqaNbPSIGYDV6CycTGhByvYnhdoczuVngx9ZQW2p5NGUbekxqBKM_jzngPv4kclo0EY86-k2UKiNPlky5XBJDPOIBsDknu4tkC8X7dcP0shYUgdvVrUosB5uiryDM-6wtIV64vEsibRys6myAPp453I4S0W5VHYdH72_dOLI8-55IDezgWBg8l4NtKc8r8NQBxIuT4fPyw8-MB6sSDk-fAGNi_SRBcwa75H_DytMihd7dsJVGIz1DUUq2CUYtf6Obu1y5wQbRbN')"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-background-dark bg-olive-muted flex items-center justify-center text-[8px] text-white">+2</div>
+</div>
+<p class="text-xs text-olive-muted font-medium">Prof. Sharma &amp; 2 Lab Assistants</p>
+</div>
+</div>
+</div>
+<!-- Break/Self-Study -->
+<div class="relative pl-16 py-2">
+<div class="absolute left-0 h-full flex items-center justify-center w-8">
+<div class="w-1 h-1 bg-olive-muted/30 rounded-full"></div>
+</div>
+<p class="text-xs italic text-olive-muted/60">12:00 - 13:00 • Lunch &amp; Self-Study Break</p>
+</div>
+<!-- Theory Session (1 Hour) -->
+<div class="relative pl-16 group">
+<div class="absolute left-0 top-0 h-full flex flex-col items-center">
+<span class="text-xs font-bold text-olive-muted mb-1">13:00</span>
+<div class="w-[2px] grow bg-olive-muted/20 rounded-full"></div>
+<span class="text-xs font-bold text-olive-muted mt-1">14:00</span>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl border-l-4 border-olive-muted p-5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-center">
+<div>
+<span class="text-[10px] uppercase font-bold text-olive-muted tracking-widest bg-olive-muted/10 px-2 py-0.5 rounded">Theory Session</span>
+<h4 class="text-[#181311] dark:text-white text-lg font-bold mt-1">Operating Systems</h4>
+<p class="text-olive-muted text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-base">meeting_room</span>
+                                                Lecture Hall 302
+                                            </p>
+</div>
+<span class="material-symbols-outlined text-olive-muted/30">more_vert</span>
+</div>
+</div>
+</div>
+<!-- Theory Session (1 Hour) -->
+<div class="relative pl-16 group">
+<div class="absolute left-0 top-0 h-full flex flex-col items-center">
+<span class="text-xs font-bold text-olive-muted mb-1">14:00</span>
+<div class="w-[2px] grow bg-olive-muted/20 rounded-full"></div>
+<span class="text-xs font-bold text-olive-muted mt-1">15:00</span>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl border-l-4 border-olive-muted p-5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-center">
+<div>
+<span class="text-[10px] uppercase font-bold text-olive-muted tracking-widest bg-olive-muted/10 px-2 py-0.5 rounded">Theory Session</span>
+<h4 class="text-[#181311] dark:text-white text-lg font-bold mt-1">ATC: Automata Theory &amp; Comp.</h4>
+<p class="text-olive-muted text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-base">meeting_room</span>
+                                                Lecture Hall 105
+                                            </p>
+</div>
+<span class="material-symbols-outlined text-olive-muted/30">more_vert</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Focus & Status -->
+<div class="col-span-4 flex flex-col gap-6">
+<!-- Workload Status Card -->
+<div class="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#e5dedc] dark:border-white/10 shadow-sm">
+<div class="flex flex-col gap-4">
+<div class="flex gap-4 justify-between items-start">
+<div>
+<p class="text-[#181311] dark:text-white text-base font-bold leading-normal">Daily Workload</p>
+<p class="text-olive-muted text-xs">Based on Batch 3 rotation</p>
+</div>
+<p class="text-primary text-2xl font-black">75%</p>
+</div>
+<div class="rounded-full bg-[#e5dedc] dark:bg-white/10 h-3 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 75%;"></div>
+</div>
+<p class="text-olive-muted text-xs font-medium leading-relaxed italic">
+                                    "DAA Lab block occupies 40% of today's schedule. Recommended to finish observations before 15:00."
+                                </p>
+</div>
+</div>
+<!-- Today's Focus Checklist -->
+<div class="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#e5dedc] dark:border-white/10 shadow-sm">
+<h3 class="text-[#181311] dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">target</span>
+                                Today's Focus
+                            </h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-background-light dark:bg-white/5 border border-primary/10">
+<div class="mt-0.5">
+<input class="rounded border-olive-muted text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-[#181311] dark:text-white">DAA Lab Observation</p>
+<p class="text-[11px] text-olive-muted">Priority: High • Topic: Max-Heap Analysis</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg hover:bg-background-light dark:hover:bg-white/5 border border-transparent transition-colors">
+<div class="mt-0.5">
+<input class="rounded border-olive-muted text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-[#181311] dark:text-white">Review OS Paging Notes</p>
+<p class="text-[11px] text-olive-muted">Priority: Medium • Chap 4: Virtual Memory</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg hover:bg-background-light dark:hover:bg-white/5 border border-transparent transition-colors">
+<div class="mt-0.5">
+<input class="rounded border-olive-muted text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-[#181311] dark:text-white">ATC Quiz Prep</p>
+<p class="text-[11px] text-olive-muted">Priority: Low • Finite Automata</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-2 text-xs font-bold text-olive-muted border border-dashed border-olive-muted/30 rounded-lg hover:bg-olive-muted/5 transition-colors">
+                                + Add Task
+                            </button>
+</div>
+<!-- Quick Resources -->
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/10">
+<h3 class="text-primary text-sm font-bold uppercase tracking-widest mb-4">Engineering Suite</h3>
+<div class="grid grid-cols-2 gap-3">
+<a class="flex flex-col items-center justify-center p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/10 hover:-translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary mb-1">terminal</span>
+<span class="text-[10px] font-bold text-olive-muted">Compiler</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/10 hover:-translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary mb-1">code</span>
+<span class="text-[10px] font-bold text-olive-muted">Linux Term</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/10 hover:-translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary mb-1">history_edu</span>
+<span class="text-[10px] font-bold text-olive-muted">E-Library</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-primary/10 hover:-translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary mb-1">cloud_upload</span>
+<span class="text-[10px] font-bold text-olive-muted">Portals</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
