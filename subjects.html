@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SemSync | Semester Progress</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Lexend', 'sans-serif']
+          },
+          colors: {
+            primary: '#e85e30',
+            soft: '#f7f4f2',
+            muted: '#6b705c',
+            success: '#0f9d58'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-soft font-display text-gray-900">
+
+<!--
+SemSync – Frontend-only academic productivity prototype
+Shows semester-level progress for Batch-3 engineering students
+No backend, no database, no real-time data
+-->
+
+<!-- Header -->
+<header class="bg-white border-b px-8 py-4 flex justify-between items-center">
+  <div>
+    <h1 class="text-2xl font-black text-primary">SemSync</h1>
+    <p class="text-sm text-muted">Academic Planner for Engineering Students (Batch 3)</p>
+  </div>
+  <nav class="flex gap-6 text-sm font-semibold">
+    <a href="index.html" class="text-muted hover:text-primary">Dashboard</a>
+    <a href="timetable.html" class="text-muted hover:text-primary">Weekly Planner</a>
+    <a href="subjects.html" class="text-primary">Semester Progress</a>
+  </nav>
+</header>
+
+<!-- Main -->
+<main class="max-w-7xl mx-auto px-8 py-10">
+
+  <div class="mb-8">
+    <h2 class="text-3xl font-black mb-2">Semester Progress</h2>
+    <p class="text-muted max-w-2xl">
+      Tracks syllabus coverage, lab workload, and internal assessment readiness
+      for Engineering Semester V (Batch 3).
+    </p>
+  </div>
+
+  <!-- Summary -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <p class="text-xs font-bold text-muted uppercase">Attendance</p>
+      <p class="text-3xl font-black mt-2">88%</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mt-3">
+        <div class="bg-success h-2 rounded-full" style="width:88%"></div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <p class="text-xs font-bold text-muted uppercase">Labs Completed</p>
+      <p class="text-3xl font-black mt-2">12 / 15</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mt-3">
+        <div class="bg-primary h-2 rounded-full" style="width:80%"></div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <p class="text-xs font-bold text-muted uppercase">IA Readiness</p>
+      <p class="text-3xl font-black mt-2">High</p>
+      <div class="flex gap-1 mt-3">
+        <div class="h-2 flex-1 bg-primary rounded-full"></div>
+        <div class="h-2 flex-1 bg-primary rounded-full"></div>
+        <div class="h-2 flex-1 bg-primary rounded-full"></div>
+        <div class="h-2 flex-1 bg-gray-200 rounded-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subjects -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- OS -->
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <h3 class="text-xl font-black text-primary">OS</h3>
+      <p class="text-xs text-muted mb-4">Operating Systems</p>
+      <p class="text-sm font-semibold mb-1">Syllabus Coverage</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mb-3">
+        <div class="bg-primary h-2 rounded-full" style="width:75%"></div>
+      </div>
+      <p class="text-xs text-muted">Labs: 6 / 8 completed</p>
+    </div>
+
+    <!-- DAA -->
+    <div class="bg-white rounded-xl p-6 border-2 border-primary shadow-md">
+      <h3 class="text-xl font-black text-primary">DAA</h3>
+      <p class="text-xs text-muted mb-4">Design & Analysis of Algorithms</p>
+      <p class="text-sm font-semibold mb-1">Syllabus Coverage</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mb-3">
+        <div class="bg-primary h-2 rounded-full" style="width:62%"></div>
+      </div>
+      <p class="text-xs text-muted">Labs: 12 / 14 completed (High Load)</p>
+    </div>
+
+    <!-- CAO -->
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <h3 class="text-xl font-black text-primary">CAO</h3>
+      <p class="text-xs text-muted mb-4">Computer Architecture</p>
+      <p class="text-sm font-semibold mb-1">Syllabus Coverage</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mb-3">
+        <div class="bg-success h-2 rounded-full" style="width:90%"></div>
+      </div>
+      <p class="text-xs text-muted">Labs: 4 / 4 completed</p>
+    </div>
+
+    <!-- ATC -->
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <h3 class="text-xl font-black text-primary">ATC</h3>
+      <p class="text-xs text-muted mb-4">Automata Theory</p>
+      <p class="text-sm font-semibold mb-1">Syllabus Coverage</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mb-3">
+        <div class="bg-primary h-2 rounded-full" style="width:45%"></div>
+      </div>
+      <p class="text-xs text-muted">No lab component</p>
+    </div>
+
+    <!-- JP -->
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <h3 class="text-xl font-black text-primary">JP</h3>
+      <p class="text-xs text-muted mb-4">Java Programming</p>
+      <p class="text-sm font-semibold mb-1">Syllabus Coverage</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mb-3">
+        <div class="bg-primary h-2 rounded-full" style="width:82%"></div>
+      </div>
+      <p class="text-xs text-muted">Labs: 10 / 12 completed</p>
+    </div>
+
+    <!-- PE -->
+    <div class="bg-white rounded-xl p-6 border shadow-sm">
+      <h3 class="text-xl font-black text-primary">PE</h3>
+      <p class="text-xs text-muted mb-4">Python for Engineering</p>
+      <p class="text-sm font-semibold mb-1">Syllabus Coverage</p>
+      <div class="w-full bg-gray-200 h-2 rounded-full mb-3">
+        <div class="bg-primary h-2 rounded-full" style="width:30%"></div>
+      </div>
+      <p class="text-xs text-muted">Labs: 2 / 10 completed</p>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="text-center text-xs text-muted py-6">
+  SemSync • Semester progress overview • Batch-3
+</footer>
+
+</body>
+</html>
