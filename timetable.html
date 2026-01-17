@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SemSync | Weekly Timetable</title>
+  <title>SemSync | Weekly Planner</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700;900&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            display: ['Lexend', 'sans-serif']
-          },
+          fontFamily: { display: ['Lexend', 'sans-serif'] },
           colors: {
             primary: '#e85e30',
             soft: '#f7f4f2',
@@ -31,142 +26,75 @@
 
 <body class="bg-soft font-display text-gray-900">
 
-<!--
-SemSync – Frontend-only academic productivity prototype
-Based on a real Batch-3 engineering timetable
-No backend, no database, no real-time data
--->
-
-<!-- Header -->
 <header class="bg-white border-b px-8 py-4 flex justify-between items-center">
   <div>
     <h1 class="text-2xl font-black text-primary">SemSync</h1>
     <p class="text-sm text-muted">Academic Planner for Engineering Students (Batch 3)</p>
   </div>
+
   <nav class="flex gap-6 text-sm font-semibold">
-    <a href="index.html" class="text-muted hover:text-primary">Dashboard</a>
+    <a href="index.html" class="hover:text-primary">Dashboard</a>
     <a href="timetable.html" class="text-primary">Weekly Planner</a>
-    <a href="subjects.html" class="text-muted hover:text-primary">Semester Progress</a>
+    <a href="subjects.html" class="hover:text-primary">Semester Progress</a>
   </nav>
 </header>
 
-<!-- Main -->
 <main class="max-w-7xl mx-auto px-8 py-10">
+  <h2 class="text-3xl font-black mb-2">Weekly Timetable</h2>
+  <p class="text-muted mb-8">
+    Based on the actual Batch-3 weekly academic schedule.
+  </p>
 
-  <div class="mb-8">
-    <h2 class="text-3xl font-black mb-2">Weekly Timetable</h2>
-    <p class="text-muted max-w-2xl">
-      Based on the actual Batch-3 academic schedule, highlighting lab-heavy days
-      and theory sessions for better planning.
-    </p>
-  </div>
-
-  <!-- Timetable -->
   <div class="overflow-x-auto bg-white rounded-xl shadow border">
-    <table class="w-full border-collapse text-sm">
-      <thead class="bg-gray-100 text-gray-700">
+    <table class="w-full text-sm border-collapse">
+      <thead class="bg-gray-100">
         <tr>
           <th class="p-4 text-left">Time</th>
-          <th class="p-4">Monday</th>
-          <th class="p-4">Tuesday</th>
-          <th class="p-4">Wednesday</th>
-          <th class="p-4">Thursday</th>
-          <th class="p-4">Friday</th>
+          <th class="p-4">Mon</th>
+          <th class="p-4">Tue</th>
+          <th class="p-4">Wed</th>
+          <th class="p-4">Thu</th>
+          <th class="p-4">Fri</th>
         </tr>
       </thead>
-
       <tbody class="divide-y">
-
         <tr>
-          <td class="p-4 font-semibold">08:30 – 10:30</td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>DAA Lab</strong><br/>
-            <span class="text-xs text-muted">Batch-3 • C13</span>
-          </td>
+          <td class="p-4 font-semibold">08:30–10:30</td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">DAA Lab</td>
           <td class="p-4">OS</td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>MD</strong><br/>
-            <span class="text-xs text-muted">All Day</span>
-          </td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>JP Lab</strong>
-          </td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>OS / JP Lab</strong>
-          </td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">MD</td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">JP Lab</td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">OS / JP Lab</td>
         </tr>
-
         <tr>
-          <td class="p-4 font-semibold">10:30 – 12:30</td>
+          <td class="p-4 font-semibold">10:30–12:30</td>
           <td class="p-4">CAO</td>
           <td class="p-4">DAA</td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>MD</strong>
-          </td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>DAA / JP Lab</strong>
-          </td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">MD</td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">DAA / JP Lab</td>
           <td class="p-4">JP</td>
         </tr>
-
         <tr class="bg-gray-50">
-          <td class="p-4 font-semibold">12:30 – 01:15</td>
-          <td colspan="5" class="p-4 text-center text-muted font-semibold">
-            Lunch & Mental Reset Break
+          <td class="p-4 font-semibold">12:30–01:15</td>
+          <td colspan="5" class="p-4 text-center font-semibold text-muted">
+            Lunch Break
           </td>
         </tr>
-
         <tr>
-          <td class="p-4 font-semibold">01:15 – 02:15</td>
+          <td class="p-4 font-semibold">01:15–02:15</td>
           <td class="p-4">ATC</td>
           <td class="p-4">PE</td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>MD</strong>
-          </td>
+          <td class="p-4 bg-orange-50 border-l-4 border-primary">MD</td>
           <td class="p-4">FLAPS</td>
           <td class="p-4">ES</td>
         </tr>
-
-        <tr>
-          <td class="p-4 font-semibold">02:15 – 03:15</td>
-          <td class="p-4">OS</td>
-          <td class="p-4">PE</td>
-          <td class="p-4">ES</td>
-          <td class="p-4">DAA</td>
-          <td class="p-4">—</td>
-        </tr>
-
-        <tr>
-          <td class="p-4 font-semibold">03:15 – 04:15</td>
-          <td class="p-4">OS</td>
-          <td class="p-4 bg-orange-50 border-l-4 border-primary">
-            <strong>JP Lab</strong>
-          </td>
-          <td class="p-4">—</td>
-          <td class="p-4">OS</td>
-          <td class="p-4">FLAPS</td>
-        </tr>
-
       </tbody>
     </table>
   </div>
-
-  <!-- Legend -->
-  <div class="mt-6 flex gap-6 text-sm">
-    <div class="flex items-center gap-2">
-      <span class="w-3 h-3 bg-primary rounded-full"></span>
-      <span>Laboratory Sessions</span>
-    </div>
-    <div class="flex items-center gap-2">
-      <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
-      <span>Theory Lectures</span>
-    </div>
-  </div>
-
 </main>
 
 <footer class="text-center text-xs text-muted py-6">
-  SemSync • Frontend-only academic planner • Batch-3
+  SemSync • Weekly Planner • Batch-3
 </footer>
 
 </body>
